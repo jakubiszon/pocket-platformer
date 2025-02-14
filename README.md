@@ -9,10 +9,10 @@ https://the-l0bster.itch.io/pocket-platformer
 
 This repository is a modification aiming to make integrating Pocket Platformer and other webpages a little easier.
 Added features:
-- handling events emitted from the game
+- events emitted from the game
   - on level finished
   - on player death
-- TODO: more stuff . . .
+- TODO: selecting start level - at the moment the game begins with the start screen asking to press *enter*
 <!--
   - TODO: on coin collected
   - TODO: on reaching checkpoint
@@ -36,7 +36,7 @@ function myHandler( eventData ) {
 <!-- in your html -->
 <iframe
     src="exported-game.html"
-    onload="() => (this.contentWindow.gameEventCallback = myHandler)"
+    onload="this.contentWindow.gameEventCallback = myHandler; this.focus();"
 />
 ```
 
@@ -66,6 +66,6 @@ The `nextLevelIndex` property will contain either the level number targeted by t
 // argument passed when player dies
 {
     "eventName": "player-death",
-    "levelIndex": number }
+    "levelIndex": number,
 }
 ```

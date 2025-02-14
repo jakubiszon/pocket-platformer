@@ -3,6 +3,11 @@
  */
 class EventEmitter {
     static emit( data ) {
+        if( typeof(data) === 'string' )
+        {
+            data = { eventName: data };
+        }
+
         if( typeof(window.gameEventCallback) === 'function' )
         {
             window.gameEventCallback(data);
