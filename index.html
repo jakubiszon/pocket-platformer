@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Pocket Platformer</title>
     <script>
+        //startRemoval 
         window.onbeforeunload = function (e) {
             e = e || window.event;
             // For IE and Firefox prior to version 4
@@ -13,6 +14,7 @@
             }
             return 'Are you sure you want to close? Your progress will be lost.';
         };
+        //endRemoval
     </script>
 </head>
 
@@ -677,6 +679,7 @@
         <script src="htmlRenderers/EffectHtmlRenderer.js"></script>
         <script src="htmlRenderers/CustomSpritesElementsRenderer.js"></script>
         <script src="htmlRenderers/SoundHandlerRenderer.js"></script>
+        <script src="objects/EventEmitter.js"></script>
         <link rel="stylesheet" type="text/css" href="styles/gameScreen.css">
         <link rel="stylesheet" type="text/css" href="styles/buildMenu.css">
         <link rel="stylesheet" type="text/css" href="styles/drawSection.css">

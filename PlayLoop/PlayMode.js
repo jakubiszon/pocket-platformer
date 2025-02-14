@@ -106,6 +106,10 @@ class PlayMode {
         this.player.resetAttributes();
         GameStatistics.deathCounter++;
         tileMapHandler.currentGeneralFrameCounter = 0;
+        EventEmitter.emit({
+            eventName: 'player-death',
+            levelIndex: tileMapHandler.currentLevel,
+        });
     }
 
     static checkActiveCheckPoints() {

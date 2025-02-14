@@ -18,6 +18,11 @@ class FinishFlag extends InteractiveLevelObject {
     collisionEvent() {
         if (!this.collidedWithPlayer && !this.closed) {
             this.collidedWithPlayer = true;
+            EventEmitter.emit({
+                eventName: 'level-completed',
+                levelIndex: this.tilemapHandler.currentLevel, // index of the level that was completed
+                nextLevelIndex: this.customExit?.levelIndex ?? this.tilemapHandler.currentLevel + 1, // index of the next level
+            });
             SoundHandler.win.stopAndPlay();
             PlayMode.animateToNextLevel = true;
             PlayMode.currentPauseFrames = TransitionAnimationHandler.animationFrames;
