@@ -26,12 +26,14 @@ If you have access to the browser window containing the game you can assign it a
 The function will be called when certain events happen during gameplay.
 
 ```js
+// in your script
 function myHandler( eventData ) {
     console.log( eventData );
 }
 ```
 
 ```html
+<!-- in your html -->
 <iframe
     src="exported-game.html"
     onload="() => (this.contentWindow.gameEventCallback = myHandler)"
@@ -63,7 +65,7 @@ The `nextLevelIndex` property will contain either the level number targeted by t
 ```js
 // argument passed when player dies
 {
-    "eventName": "level-completed",
+    "eventName": "player-death",
     "levelIndex": number }
 }
 ```
