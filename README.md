@@ -20,6 +20,9 @@ Added features:
 - TODO: calling game functions
 -->
 
+Your existing Pocket Platformer games can be [imported and exported here](https://jakubiszon.github.io/pocket-platformer) to make the exports include the extra code.
+
+
 ## Events
 
 If you have access to the browser window containing the game you can assign it a handler function to `gameEventCallback` property.
