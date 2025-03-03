@@ -1,7 +1,8 @@
 class PauseHandler {
 
     static staticConstructor() {
-        this.options = ["Continue", "Restart game"];
+        //this.options = ["Continue", "Restart game"];
+        this.options = ["Continue"];
         this.resetAttributes();
         this.downArrowReleased = true;
         this.restartedGame = false;
