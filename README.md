@@ -9,16 +9,22 @@ https://the-l0bster.itch.io/pocket-platformer
 
 This repository is a modification aiming to make integrating Pocket Platformer and other webpages a little easier.
 Added features:
+- "Restart Game" option removed from pause menu - this was moving the player to lvl 1.
 - events emitted from the game
   - on level finished
   - on player death
-- TODO: selecting start level - at the moment the game begins with the start screen asking to press *enter*
+- selecting start level:
+  - append `#number` at the end of the exported page URL to make the game start on the chosen level, e.g. [for lvl 2 - ./example/game.html#2](./example/game.html#2)
+  - append `#number.xyz` where `number` is the number of the level and `xyz` is a flag identifier to make the player start on the selected flag, e.g. [lvl 1 and flag with "Dow" id - ./example/game.html#1.Dow](./example/game.html#1.Dow)
+
 <!--
   - TODO: on coin collected
   - TODO: on reaching checkpoint
 - TODO: passing game launch values
 - TODO: calling game functions
 -->
+
+---
 
 Your existing Pocket Platformer games can be [imported and exported here](https://jakubiszon.github.io/pocket-platformer) to make the exports include the extra code.
 
