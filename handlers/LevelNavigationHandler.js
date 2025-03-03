@@ -1,3 +1,4 @@
+/** Used in edit mode to add/remove and navigate between levels. */
 class LevelNavigationHandler {
 
     static staticConstructor() {
