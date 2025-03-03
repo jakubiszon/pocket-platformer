@@ -14,10 +14,11 @@ Added features:
   - on level finished
   - on player death
 - selecting start level:
-  - append `#number` at the end of the exported page URL to make the game start on the chosen level, e.g. [for lvl 2 - ./example/game.html#2](./example/game.html#2)
-  - append `#number.xyz` where `number` is the number of the level and `xyz` is a flag identifier to make the player start on the selected flag, e.g. [lvl 1 and flag with "Dow" id - ./example/game.html#1.Dow](./example/game.html#1.Dow)
+  - append `#number` at the end of the exported page URL to make the game start on the chosen level, e.g. [for lvl 2 - ./example/game.html#2](https://jakubiszon.github.io/pocket-platformer/example/game.html#2)
+  - append `#number.xyz` where `number` is the number of the level and `xyz` is a flag identifier to make the player start on the selected flag, e.g. [lvl 1 and flag with "Dow" id - ./example/game.html#1.Dow](https://jakubiszon.github.io/pocket-platformer/example/game.html#1.Dow)
 
 <!--
+- TODO: more events:
   - TODO: on coin collected
   - TODO: on reaching checkpoint
 - TODO: passing game launch values
