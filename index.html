@@ -4,18 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Pocket Platformer</title>
-    <script>
-        //startRemoval 
-        window.onbeforeunload = function (e) {
-            e = e || window.event;
-            // For IE and Firefox prior to version 4
-            if (e) {
-                e.returnValue = 'Are you sure you want to close? Your progress will be lost.';
-            }
-            return 'Are you sure you want to close? Your progress will be lost.';
-        };
-        //endRemoval
-    </script>
 </head>
 
 <body>
@@ -702,7 +690,18 @@
                 WorldDataHandler.initialPlayerPosition.y, WorldDataHandler.tileSize, spriteCanvas);
             Game.staticConstructor();
             TransitionAnimationHandler.staticConstructor();
-            let startLevel = 0;
+            let startLevel = getStartGameData( 'level' );
+
+            function getStartGameData ( part ) {
+                if( !part ) return 0;
+                if( !window.location.hash ) return 0;
+
+                const parts = window.location.hash.substring(1).split(".");
+                if( part === 'level' ) return parseInt(parts[0]);
+                if( part === 'flag-index' ) return parts[1];
+
+                return 0;
+            }
 
             //putAllDataHere
             if (WorldDataHandler.insideTool) {
@@ -738,7 +737,7 @@
             GameStatistics.staticConstructor();
             PauseHandler.staticConstructor();
             EffectsRenderer.staticConstructor(tileMapHandler);
-            tileMapHandler.resetLevel(startLevel)
+            tileMapHandler.resetLevel(startLevel, getStartGameData('flag-index'));
 
             //startRemoval 
             BuildMode.staticConstructor(tileMapHandler, player);
